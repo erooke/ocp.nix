@@ -14,6 +14,19 @@
     in
     {
       formatter.${system} = pkgs.nixfmt-rfc-style;
+
       overlays.default = overlay;
+
+      checks.${system} = {
+        deadcode =
+          pkgs.runCommandLocal "fmt-check"
+            {
+              src = ./.;
+              nativeBuildInputs = [ pkgs.deadnix ];
+            }
+            ''
+              deadnix --fail $src && touch $out
+            '';
+      };
     };
 }
