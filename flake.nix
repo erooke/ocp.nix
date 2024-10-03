@@ -6,12 +6,14 @@
   };
 
   outputs =
-    { self, nixpkgs }:
+    { nixpkgs, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      overlay = import ./pkgs/overlay.nix;
+      pkgs = nixpkgs.legacyPackages.${system}.extend overlay;
     in
     {
       formatter.${system} = pkgs.nixfmt-rfc-style;
+      overlays.default = overlay;
     };
 }
