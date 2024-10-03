@@ -27,6 +27,17 @@
             ''
               deadnix --fail $src && touch $out
             '';
+
+        fmt =
+          pkgs.runCommandLocal "fmt"
+            {
+              src = ./.;
+              nativeBuildInputs = [ pkgs.nixfmt-rfc-style ];
+            }
+            ''
+              nixfmt -c "$src" && touch $out
+            '';
+
       };
     };
 }
