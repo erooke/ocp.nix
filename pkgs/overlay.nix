@@ -5,6 +5,10 @@ final: prev: {
 
   lib3mf = final.callPackage ./lib3mf { };
 
+  opencascade-occt = final.pkgs.callPackage ./opencascade-occt {
+    enableVtk = true;
+  };
+
   pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [ python-overlay ];
 
 }

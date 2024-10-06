@@ -12,6 +12,8 @@
   libXmu,
   libXi,
   darwin,
+  vtk,
+  enableVtk ? false,
 }:
 
 stdenv.mkDerivation rec {
@@ -29,15 +31,24 @@ stdenv.mkDerivation rec {
     cmake
     ninja
   ];
-  buildInputs = [
-    tcl
-    tk
-    libGL
-    libGLU
-    libXext
-    libXmu
-    libXi
-  ] ++ lib.optional stdenv.isDarwin darwin.apple_sdk.frameworks.Cocoa;
+
+  buildInputs =
+    [
+      tcl
+      tk
+      libGL
+      libGLU
+      libXext
+      libXmu
+      libXi
+    ]
+    ++ lib.optional enableVtk [ vtk ] ++ lib.optional stdenv.isDarwin darwin.apple_sdk.frameworks.Cocoa;
+
+  cmakeFlags = lib.optional enableVtk [
+    "-DUSE_VTK=ON"
+    "-D 3RDPARTY_VTK_LIBRARY_DIR:FILEPATH=${vtk}/lib"
+    "-D 3RDPARTY_VTK_INCLUDE_DIR:FILEPATH=${vtk}/include/vtk"
+  ];
 
   meta = with lib; {
     description = "Open CASCADE Technology, libraries for 3D modeling and numerical simulation";
