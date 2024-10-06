@@ -10,6 +10,8 @@ final: prev: {
     enableRapidJson = true;
   };
 
-  pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [ python-overlay ];
+  pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [
+    (final.callPackage python-overlay { })
+  ];
 
 }
