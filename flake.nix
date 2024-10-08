@@ -17,6 +17,8 @@
 
       overlays.default = overlay;
 
+      packages.${system}.default = pkgs.python3.withPackages (ps: [ ps.ocp ]);
+
       checks.${system} = {
         deadcode =
           pkgs.runCommandLocal "fmt-check"

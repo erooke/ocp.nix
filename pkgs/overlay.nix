@@ -10,6 +10,10 @@ final: prev: {
     enableRapidJson = true;
   };
 
+  ocp = final.pkgs.callPackage ./OCP {
+    vtk = final.python3.pkgs.vtk;
+  };
+
   pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [
     (final.callPackage python-overlay { })
   ];
