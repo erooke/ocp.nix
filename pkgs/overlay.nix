@@ -7,6 +7,7 @@ final: prev: {
 
   opencascade-occt = final.pkgs.callPackage ./opencascade-occt {
     enableVtk = true;
+    enableRapidJson = true;
   };
 
   pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [ python-overlay ];

@@ -14,6 +14,8 @@
   darwin,
   vtk,
   enableVtk ? false,
+  rapidjson,
+  enableRapidJson ? false,
 }:
 
 stdenv.mkDerivation rec {
@@ -42,13 +44,19 @@ stdenv.mkDerivation rec {
       libXmu
       libXi
     ]
-    ++ lib.optional enableVtk [ vtk ] ++ lib.optional stdenv.isDarwin darwin.apple_sdk.frameworks.Cocoa;
+    ++ lib.optional enableVtk [ vtk ]
+    ++ lib.optional enableRapidJson [ rapidjson ]
+    ++ lib.optional stdenv.isDarwin darwin.apple_sdk.frameworks.Cocoa;
 
-  cmakeFlags = lib.optional enableVtk [
-    "-DUSE_VTK=ON"
-    "-D 3RDPARTY_VTK_LIBRARY_DIR:FILEPATH=${vtk}/lib"
-    "-D 3RDPARTY_VTK_INCLUDE_DIR:FILEPATH=${vtk}/include/vtk"
-  ];
+  cmakeFlags =
+    lib.optional enableRapidJson [
+      "-D USE_RAPIDJSON:BOOL=ON"
+    ]
+    ++ lib.optional enableVtk [
+      "-D USE_VTK=ON"
+      "-D 3RDPARTY_VTK_LIBRARY_DIR:FILEPATH=${vtk}/lib"
+      "-D 3RDPARTY_VTK_INCLUDE_DIR:FILEPATH=${vtk}/include/vtk"
+    ];
 
   meta = with lib; {
     description = "Open CASCADE Technology, libraries for 3D modeling and numerical simulation";
