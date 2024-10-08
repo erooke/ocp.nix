@@ -17,7 +17,7 @@
 
       overlays.default = overlay;
 
-      packages.${system}.default = pkgs.python3.withPackages (ps: [ ps.ocp ]);
+      packages.${system}.default = pkgs.python3.withPackages (ps: [ ps.cadquery ]);
 
       checks.${system} = {
         deadcode =

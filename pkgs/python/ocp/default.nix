@@ -4,7 +4,6 @@
   setuptools,
   writeText,
   vtk,
-  breakpointHook,
 }:
 let
   pname = "OCP";
@@ -27,8 +26,6 @@ buildPythonPackage {
   inherit version pname;
 
   pyproject = true;
-
-  nativeBuildInputs = [ breakpointHook ];
 
   postPatch = ''
     ln -s ${setup_py} ./setup.py
