@@ -16,6 +16,8 @@
   enableVtk ? false,
   rapidjson,
   enableRapidJson ? false,
+  freeimage,
+  enableFreeimage ? false,
 }:
 
 stdenv.mkDerivation rec {
@@ -46,10 +48,15 @@ stdenv.mkDerivation rec {
     ]
     ++ lib.optional enableVtk [ vtk ]
     ++ lib.optional enableRapidJson [ rapidjson ]
+    ++ lib.optional enableFreeimage [ freeimage ]
     ++ lib.optional stdenv.isDarwin darwin.apple_sdk.frameworks.Cocoa;
 
   cmakeFlags =
-    lib.optional enableRapidJson [
+    [ "-D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF" ]
+    ++ lib.optional enableFreeimage [
+      "-D USE_FREEIMAGE:BOOL=ON"
+    ]
+    ++ lib.optional enableRapidJson [
       "-D USE_RAPIDJSON:BOOL=ON"
     ]
     ++ lib.optional enableVtk [
