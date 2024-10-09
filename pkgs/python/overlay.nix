@@ -13,6 +13,7 @@ final: prev: {
   ocpsvg = final.callPackage ./ocpsvg { };
   py-lib3mf = final.callPackage ./py-lib3mf { };
   pywrap = final.callPackage ./pywrap { };
+  qtconsole = final.callPackage ./qtconsole { };
   svgpathtools = final.callPackage ./svgpathtools { };
   trianglesolver = final.callPackage ./trianglesolver { };
 }
