@@ -8,6 +8,14 @@ Inspired by [vinszent/cq-flake](https://github.com/vinszent/cq-flake).
 OCP and CadQuery build; albeit with a couple failing tests. Cleaning up a
 couple of things and adding docs are next on the docket.
 
+## Usage
+
+If you just want to start up a `cq-editor` session right now you can do that with:
+
+```
+nix run github:erooke/ocp.nix
+```
+
 ## Goals
 
 ### Make it trivial to start + run an OCP based project with nix
