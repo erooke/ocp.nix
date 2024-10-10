@@ -7,6 +7,7 @@ final: prev: {
   build123d = final.callPackage ./build123d { };
   cadquery = final.callPackage ./cadquery { };
   casadi = final.toPythonModule (casadi.override { pythonSupport = true; });
+  cq-kit = final.callPackage ./cq-kit { };
   libclang = prev.libclang.override { llvmPackages = llvmPackages_15; };
   nlopt = final.callPackage ./nlopt { };
   ocp = final.callPackage ./ocp { inherit ocp; };
