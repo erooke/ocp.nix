@@ -14,6 +14,8 @@ final: prev: {
   py-lib3mf = final.callPackage ./py-lib3mf { };
   pywrap = final.callPackage ./pywrap { };
   qtconsole = final.callPackage ./qtconsole { };
+  spyder = final.callPackage ./spyder { };
+  spyder-kernels = final.callPackage ./spyder-kernels { };
   svgpathtools = final.callPackage ./svgpathtools { };
   trianglesolver = final.callPackage ./trianglesolver { };
 }
