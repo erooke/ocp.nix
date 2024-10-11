@@ -1,56 +1,40 @@
 {
+  fontconfig,
+  fetchzip,
   stdenv,
-  fetchFromGitHub,
   cmake,
-  llvm_15,
-  llvmPackages_15,
   vtk,
   python3,
   rapidjson,
   opencascade-occt,
+  tk,
 }:
 let
-  pywrap-env = python3.withPackages (ps: [
-    ps.pywrap
-    ps.lief
-    ps.logzero
+  python = python3.withPackages (ps: [
+    ps.pybind11
   ]);
+  version = "7.7.2.1";
 in
 stdenv.mkDerivation {
+  pname = "OCP";
+  inherit version;
 
-  name = "OCP";
-
-  src = fetchFromGitHub {
-    owner = "CadQuery";
-    repo = "OCP";
-    rev = "7.7.2.1";
-    hash = "sha256-jXkIzI4xz5BNoyptzr75GR5ZKHrTig4NgSg7ynHH9gk=";
+  src = fetchzip {
+    url = "https://github.com/CadQuery/OCP/releases/download/${version}/OCP_src_stubs_ubuntu-20.04.zip";
+    hash = "sha256-e/k93gQKoDB+GY191Qbs1fXH7DcNSN9xE8oyFlfnosc=";
   };
-
-  patches = [
-    ./out.patch
-  ];
 
   nativeBuildInputs = [
     cmake
-    pywrap-env
+    python
   ];
 
-  preBuild = ''
-    cp -r ../opencascade ./opencascade
-  '';
-
   buildInputs = [
+    fontconfig
     opencascade-occt
-    llvmPackages_15.libclang.dev
-    llvm_15
-    vtk
     rapidjson
-  ] ++ vtk.buildInputs ++ opencascade-occt.buildInputs;
+    vtk
+    tk
+  ];
 
-  preConfigure = ''
-    cmakeFlagsArray+=(
-      -DN_PROC="''${NIX_BUILD_CORES}"
-    )
-  '';
 }
