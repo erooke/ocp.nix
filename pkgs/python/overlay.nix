@@ -5,6 +5,7 @@
 }:
 final: prev: {
   build123d = final.callPackage ./build123d { };
+  bd-warehouse = final.callPackage ./bd-warehouse { };
   cadquery = final.callPackage ./cadquery { };
   casadi = final.toPythonModule (casadi.override { pythonSupport = true; });
   cq-gridfinity = final.callPackage ./cq-gridfinity { };
