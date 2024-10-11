@@ -14,7 +14,6 @@ final: prev: {
   ocp = final.callPackage ./ocp { inherit ocp; };
   ocpsvg = final.callPackage ./ocpsvg { };
   py-lib3mf = final.callPackage ./py-lib3mf { };
-  pywrap = final.callPackage ./pywrap { };
   qtconsole = final.callPackage ./qtconsole { };
   spyder = final.callPackage ./spyder { };
   spyder-kernels = final.callPackage ./spyder-kernels { };
