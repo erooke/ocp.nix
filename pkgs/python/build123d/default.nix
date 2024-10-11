@@ -63,8 +63,6 @@ buildPythonPackage {
     "test_single_object"
     # Overly strict test
     "test_version"
-    # TODO: why does this segfault
-    "test_ellipse_rotation"
   ];
 
 }
