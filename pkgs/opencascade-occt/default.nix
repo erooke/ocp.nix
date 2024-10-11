@@ -1,5 +1,6 @@
 {
   lib,
+  fetchpatch,
   stdenv,
   fetchurl,
   cmake,
@@ -19,7 +20,6 @@
   freeimage,
   enableFreeimage ? false,
 }:
-
 stdenv.mkDerivation rec {
   pname = "opencascade-occt";
   version = "7.7.2";
@@ -30,6 +30,13 @@ stdenv.mkDerivation rec {
     url = "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=${commit};sf=tgz";
     sha256 = "sha256-M0G/pJuxsJu5gRk0rIgC173/XxI1ERpmCtWjgr/0dyY=";
   };
+
+  patches = [
+    (fetchpatch {
+      url = "https://raw.githubusercontent.com/conda-forge/occt-feedstock/00ff0f68644d9582a4c30c01220e7de0f934d427/recipe/patches/blobfish.patch";
+      sha256 = "sha256-5tqkx7W7VBw7qaseFgwBENKbGQ0iUYEL6SJHwGI9L/g=";
+    })
+  ];
 
   nativeBuildInputs = [
     cmake
