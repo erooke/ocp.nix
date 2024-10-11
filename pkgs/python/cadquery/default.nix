@@ -52,15 +52,6 @@ buildPythonPackage {
     typish
   ];
 
-  disabledTests = [
-    # TODO: why do these segfault?
-    "test_colors_assy0"
-    "test_colors_assy1"
-    "test_colors_fused_assy"
-    "testExtrude"
-    "testDXF"
-  ];
-
   nativeCheckInputs = [
     pytestCheckHook
     ipython
