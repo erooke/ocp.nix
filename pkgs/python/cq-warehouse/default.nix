@@ -33,12 +33,4 @@ buildPythonPackage {
 
   nativeCheckInputs = [ pytestCheckHook ];
 
-  disabledTests = [
-    "test_five_sprocket_chain"
-    "test_missing_link"
-    "test_oblique_plane"
-    "test_assemble_chain_transmission"
-    "test_make_link"
-  ];
-
 }
