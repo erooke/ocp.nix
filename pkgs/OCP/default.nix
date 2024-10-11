@@ -8,7 +8,6 @@
   python3,
   rapidjson,
   opencascade-occt,
-  breakpointHook,
 }:
 let
   pywrap-env = python3.withPackages (ps: [
@@ -35,7 +34,6 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pywrap-env
-    breakpointHook
   ];
 
   preBuild = ''
