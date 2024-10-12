@@ -4,8 +4,8 @@
   ocp,
 }:
 final: prev: {
-  build123d = final.callPackage ./build123d { };
   bd-warehouse = final.callPackage ./bd-warehouse { };
+  build123d = final.callPackage ./build123d { };
   cadquery = final.callPackage ./cadquery { };
   casadi = final.toPythonModule (casadi.override { pythonSupport = true; });
   cq-gridfinity = final.callPackage ./cq-gridfinity { };
@@ -21,4 +21,5 @@ final: prev: {
   spyder-kernels = final.callPackage ./spyder-kernels { };
   svgpathtools = final.callPackage ./svgpathtools { };
   trianglesolver = final.callPackage ./trianglesolver { };
+  yacv-server = final.callPackage ./yacv-server { };
 }
