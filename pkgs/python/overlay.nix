@@ -7,6 +7,7 @@ final: prev: {
   build123d = final.callPackage ./build123d { };
   cadquery = final.callPackage ./cadquery { };
   casadi = final.toPythonModule (casadi.override { pythonSupport = true; });
+  cq-gears = final.callPackage ./cq-gears { };
   cq-kit = final.callPackage ./cq-kit { };
   cq-warehouse = final.callPackage ./cq-warehouse { };
   libclang = prev.libclang.override { llvmPackages = llvmPackages_15; };
