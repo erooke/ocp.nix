@@ -20,4 +20,6 @@ final: prev: {
     (final.callPackage python-overlay { })
   ];
 
+  yacv-frontend = final.callPackage ./yacv-frontend { };
+
 }
