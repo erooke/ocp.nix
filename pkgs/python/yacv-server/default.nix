@@ -7,7 +7,7 @@
   pygltflib,
 }:
 let
-  version = "0.9.0";
+  version = "0.9.2";
   owner = "yeicor-3d";
   repo = "yet-another-cad-viewer";
   rev = "v${version}";
@@ -19,7 +19,7 @@ buildPythonPackage {
 
   src = fetchFromGitHub {
     inherit owner repo rev;
-    hash = "sha256-aDQQAHOLN5GEQj3Bg/MVdffbdeR9Pp0LJx5u36+b1Ec=";
+    hash = "sha256-4rNwYXjpf462zLf96QgMwPDPwoEyT5QrdUgZ7Run1fU=";
   };
 
   pyproject = true;
@@ -32,5 +32,9 @@ buildPythonPackage {
     build123d
     pillow
     pygltflib
+  ];
+
+  pythonRelaxDeps = [
+    "build123d"
   ];
 }
