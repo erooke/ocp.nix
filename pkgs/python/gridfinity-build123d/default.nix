@@ -35,4 +35,6 @@ buildPythonPackage {
 
   nativeCheckInputs = [ pytestCheckHook ];
 
+  pythonRelaxDeps = [ "build123d" ];
+
 }
