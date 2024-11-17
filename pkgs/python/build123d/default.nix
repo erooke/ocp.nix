@@ -19,12 +19,12 @@
 }:
 let
   pname = "build123d";
-  version = "0.7.0";
+  version = "0.8.0";
   src = fetchFromGitHub {
     owner = "gumyr";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-21H4WexV6NbeLZdX1Ht5+opaOQrd9Tff1nH874r/agI=";
+    hash = "sha256-yhTMMuYCmrdWbc4+7mUm1m1q6qGqQDn0tN5te/EPQac=";
   };
 in
 buildPythonPackage {
@@ -64,5 +64,7 @@ buildPythonPackage {
     # Overly strict test
     "test_version"
   ];
+
+  pythonRelaxDeps = [ "numpy" ];
 
 }
