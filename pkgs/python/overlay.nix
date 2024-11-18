@@ -23,5 +23,6 @@ final: prev: {
   spyder-kernels = final.callPackage ./spyder-kernels { };
   svgpathtools = final.callPackage ./svgpathtools { };
   trianglesolver = final.callPackage ./trianglesolver { };
+  vscode-ocp-cad-viewer = final.callPackage ./vscode-ocp-cad-viewer { };
   yacv-server = final.callPackage ./yacv-server { };
 }
