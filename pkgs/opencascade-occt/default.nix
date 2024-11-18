@@ -58,6 +58,8 @@ stdenv.mkDerivation rec {
     ++ lib.optional enableFreeimage [ freeimage ]
     ++ lib.optional stdenv.isDarwin darwin.apple_sdk.frameworks.Cocoa;
 
+  NIX_CFLAGS_COMPILE = [ "-fpermissive" ];
+
   cmakeFlags =
     [ "-D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF" ]
     ++ lib.optional enableFreeimage [
