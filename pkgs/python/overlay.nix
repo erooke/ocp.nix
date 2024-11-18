@@ -15,6 +15,7 @@ final: prev: {
   libclang = prev.libclang.override { llvmPackages = llvmPackages_15; };
   nlopt = final.callPackage ./nlopt { };
   ocp = final.callPackage ./ocp { inherit ocp; };
+  ocp-tessellate = final.callPackage ./ocp-tessellate { };
   ocpsvg = final.callPackage ./ocpsvg { };
   py-lib3mf = final.callPackage ./py-lib3mf { };
   qtconsole = final.callPackage ./qtconsole { };
