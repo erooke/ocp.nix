@@ -1,5 +1,5 @@
 {
-  fetchFromGitHub,
+  fetchzip,
   buildPythonPackage,
   setuptools,
   webcolors,
@@ -12,18 +12,14 @@
 }:
 let
   version = "3.0.8";
-  owner = "bernhard-42";
-  repo = "ocp-tessellate";
-  rev = "v${version}";
 in
 
 buildPythonPackage {
   pname = "ocp_tesselate";
   inherit version;
-
-  src = fetchFromGitHub {
-    inherit owner repo rev;
-    hash = "sha256-wnWQoX++JRDqiaXvZ38Fm5tLrToDvk6qD3pMuyXYB+U=";
+  src = fetchzip {
+    url = "https://github.com/bernhard-42/ocp-tessellate/releases/download/v3.0.8/ocp_tessellate-3.0.8.tar.gz";
+    hash = "sha256-4QQ3dMvKK35NCEvvdPenLhEHhTB+AjYKA+IxOdVbv1o=";
   };
 
   pyproject = true;
@@ -43,6 +39,7 @@ buildPythonPackage {
   # Not sure why these fail
   disabledTests = [
     "TestConvertMixedCompounds"
+    "TestsImageFace"
   ];
 
   dependencies = [

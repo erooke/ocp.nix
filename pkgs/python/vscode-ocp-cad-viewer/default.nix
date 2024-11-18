@@ -54,11 +54,4 @@ buildPythonPackage {
   # The tests attempt to write to home directory...
   doCheck = false;
 
-  # TODO:
-  # Too lazy to write a patch for this
-  # https://github.com/bernhard-42/ocp-tessellate/issues/7
-  pythonRelaxDeps = [
-    "ocp-tessellate"
-  ];
-
 }
