@@ -14,7 +14,7 @@ let
   python = python3.withPackages (ps: [
     ps.pybind11
   ]);
-  version = "7.7.2.1";
+  version = "7.8.1.1";
 in
 stdenv.mkDerivation {
   pname = "OCP";
@@ -22,7 +22,7 @@ stdenv.mkDerivation {
 
   src = fetchzip {
     url = "https://github.com/CadQuery/OCP/releases/download/${version}/OCP_src_stubs_ubuntu-20.04.zip";
-    hash = "sha256-e/k93gQKoDB+GY191Qbs1fXH7DcNSN9xE8oyFlfnosc=";
+    hash = "sha256-7X6xsJe9eDqbDfur20gB4Fkgtm94soFfRqicUI5jsjM=";
   };
 
   nativeBuildInputs = [

@@ -7,7 +7,7 @@
 }:
 let
   pname = "OCP";
-  version = "7.7.2.1";
+  version = ocp.version;
   setup_py = writeText "setup.py" ''
     from setuptools import setup
 
