@@ -8,6 +8,7 @@
   rapidjson,
   opencascade-occt,
   tk,
+  libGL,
 }:
 let
   python = python3.withPackages (ps: [
@@ -30,6 +31,7 @@ stdenv.mkDerivation {
   ];
 
   buildInputs = [
+    libGL
     fontconfig
     opencascade-occt
     rapidjson
