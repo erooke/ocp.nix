@@ -12,6 +12,8 @@ final: prev: {
     enableRapidJson = true;
   };
 
+  vtk = final.pkgs.callPackage ./vtk { };
+
   ocp = final.pkgs.callPackage ./OCP {
     vtk = final.python3.pkgs.vtk;
   };
