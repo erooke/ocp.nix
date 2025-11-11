@@ -11,7 +11,6 @@ final: prev: {
   cq-kit = final.callPackage ./cq-kit { };
   cq-warehouse = final.callPackage ./cq-warehouse { };
   gridfinity-build123d = final.callPackage ./gridfinity-build123d { };
-  nlopt = final.callPackage ./nlopt { };
   ocp = final.callPackage ./ocp { inherit ocp; };
   ocp-tessellate = final.callPackage ./ocp-tessellate { };
   ocpsvg = final.callPackage ./ocpsvg { };

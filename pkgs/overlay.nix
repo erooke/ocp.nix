@@ -22,6 +22,8 @@ final: prev: {
     (final.callPackage python-overlay { })
   ];
 
+  nlopt = prev.nlopt.override { withPython = true; };
+
   yacv-frontend = final.callPackage ./yacv-frontend { };
 
 }
