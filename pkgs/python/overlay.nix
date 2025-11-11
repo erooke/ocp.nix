@@ -1,6 +1,5 @@
 {
   casadi,
-  llvmPackages_15,
   ocp,
 }:
 final: prev: {
@@ -12,7 +11,6 @@ final: prev: {
   cq-kit = final.callPackage ./cq-kit { };
   cq-warehouse = final.callPackage ./cq-warehouse { };
   gridfinity-build123d = final.callPackage ./gridfinity-build123d { };
-  libclang = prev.libclang.override { llvmPackages = llvmPackages_15; };
   nlopt = final.callPackage ./nlopt { };
   ocp = final.callPackage ./ocp { inherit ocp; };
   ocp-tessellate = final.callPackage ./ocp-tessellate { };
