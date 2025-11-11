@@ -19,6 +19,7 @@ final: prev: {
   spyder = final.callPackage ./spyder { };
   spyder-kernels = final.callPackage ./spyder-kernels { };
   svgpathtools = final.callPackage ./svgpathtools { };
+  trame-client = final.callPackage ./trame-client {};
   trame-common = final.callPackage ./trame-common {};
   trianglesolver = final.callPackage ./trianglesolver { };
   vscode-ocp-cad-viewer = final.callPackage ./vscode-ocp-cad-viewer { };
