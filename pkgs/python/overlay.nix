@@ -1,6 +1,7 @@
 {
   casadi,
   ocp,
+  fetchFromGitHub,
 }:
 final: prev: {
   bd-warehouse = final.callPackage ./bd-warehouse { };
@@ -11,6 +12,15 @@ final: prev: {
   cq-kit = final.callPackage ./cq-kit { };
   cq-warehouse = final.callPackage ./cq-warehouse { };
   gridfinity-build123d = final.callPackage ./gridfinity-build123d { };
+  multimethod = prev.multimethod.overrideAttrs (old: {
+    version = "1.12.0";
+    src = fetchFromGitHub {
+      owner = "coady";
+      repo = old.pname;
+      tag = "v1.12";
+      hash = "sha256-ToiE/0pxBFpgeXxePlmqRpZ8jVPz796kyR7Jdy0R3XI=";
+    };
+  });
   ocp = final.callPackage ./ocp { inherit ocp; };
   ocp-tessellate = final.callPackage ./ocp-tessellate { };
   ocpsvg = final.callPackage ./ocpsvg { };
