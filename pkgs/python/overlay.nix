@@ -21,6 +21,7 @@ final: prev: {
   svgpathtools = final.callPackage ./svgpathtools { };
   trame-client = final.callPackage ./trame-client {};
   trame-common = final.callPackage ./trame-common {};
+  trame-server = final.callPackage ./trame-server {};
   trianglesolver = final.callPackage ./trianglesolver { };
   vscode-ocp-cad-viewer = final.callPackage ./vscode-ocp-cad-viewer { };
   yacv-server = final.callPackage ./yacv-server { };
