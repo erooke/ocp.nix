@@ -23,6 +23,7 @@ final: prev: {
   trame-client = final.callPackage ./trame-client {};
   trame-common = final.callPackage ./trame-common {};
   trame-server = final.callPackage ./trame-server {};
+  trame-vtk = final.callPackage ./trame-vtk { };
   trianglesolver = final.callPackage ./trianglesolver { };
   vscode-ocp-cad-viewer = final.callPackage ./vscode-ocp-cad-viewer { };
   yacv-server = final.callPackage ./yacv-server { };
