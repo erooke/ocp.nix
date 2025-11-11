@@ -13,6 +13,8 @@
   pytestCheckHook,
   ipython,
   docutils,
+  trame,
+  trame-vtk,
 }:
 buildPythonPackage {
   src = fetchFromGitHub {
@@ -50,6 +52,8 @@ buildPythonPackage {
     ocp
     path
     typish
+    trame
+    trame-vtk
   ];
 
   nativeCheckInputs = [
