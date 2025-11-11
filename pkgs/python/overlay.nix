@@ -19,6 +19,7 @@ final: prev: {
   spyder = final.callPackage ./spyder { };
   spyder-kernels = final.callPackage ./spyder-kernels { };
   svgpathtools = final.callPackage ./svgpathtools { };
+  trame = final.callPackage ./trame { };
   trame-client = final.callPackage ./trame-client {};
   trame-common = final.callPackage ./trame-common {};
   trame-server = final.callPackage ./trame-server {};
