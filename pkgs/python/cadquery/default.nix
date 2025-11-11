@@ -18,11 +18,11 @@ buildPythonPackage {
   src = fetchFromGitHub {
     owner = "CadQuery";
     repo = "cadquery";
-    rev = "2.4.0";
-    hash = "sha256-f/qnq5g4FOiit9WQ7zs0axCJBITcAtqF18txMV97Gb8=";
+    rev = "v2.6.1";
+    hash = "sha256-ZIZ49RCGkPztlhU/AmDFnJXvw5kuhF+sSLKZuXMtuCU=";
   };
   pname = "cadquery";
-  version = "2.4.0";
+  version = "2.6.1";
   pyproject = true;
 
   build-system = [ setuptools ];
