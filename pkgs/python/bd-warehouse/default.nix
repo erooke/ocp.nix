@@ -2,7 +2,7 @@
   buildPythonPackage,
   fetchFromGitHub,
   setuptools,
-  setuptools_scm,
+  setuptools-scm,
   build123d,
   pytestCheckHook,
 }:
@@ -23,7 +23,7 @@ buildPythonPackage {
   pyproject = true;
   build-system = [
     setuptools
-    setuptools_scm
+    setuptools-scm
   ];
   dependencies = [ build123d ];
   nativeCheckInputs = [ pytestCheckHook ];
