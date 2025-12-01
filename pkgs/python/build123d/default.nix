@@ -11,20 +11,23 @@
   ipython,
   numpy,
   ocp,
+  ocp-gordon,
   ocpsvg,
   py-lib3mf,
   scipy,
   svgpathtools,
+  sympy,
   trianglesolver,
+  webcolors,
 }:
 let
   pname = "build123d";
-  version = "0.8.0";
+  version = "0.10.0";
   src = fetchFromGitHub {
     owner = "gumyr";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-yhTMMuYCmrdWbc4+7mUm1m1q6qGqQDn0tN5te/EPQac=";
+    hash = "sha256-EhV6/ZTBp9XxWY1CgNKESikgTnAk9xaF0g/bYEQPf20=";
   };
 in
 buildPythonPackage {
@@ -48,11 +51,14 @@ buildPythonPackage {
     ipython
     numpy
     ocp
+    ocp-gordon
     ocpsvg
     py-lib3mf
     scipy
     svgpathtools
+    sympy
     trianglesolver
+    webcolors
   ];
 
   disabledTests = [
@@ -65,6 +71,6 @@ buildPythonPackage {
     "test_version"
   ];
 
-  pythonRelaxDeps = [ "numpy" ];
+  pythonRelaxDeps = [ "webcolors"];
 
 }
