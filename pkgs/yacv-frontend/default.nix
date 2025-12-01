@@ -1,7 +1,7 @@
 {
   fetchzip,
   writeShellScriptBin,
-  httplz,
+  python3,
 }:
 let
   frontend = fetchzip {
@@ -9,4 +9,4 @@ let
     hash = "sha256-J57XPF3/1i/DlHYaR06xw6mTWAu8HW7wxFLRtJGl23w=";
   };
 in
-writeShellScriptBin "yacv-frontend" "${httplz}/bin/httplz ${frontend}"
+writeShellScriptBin "yacv-frontend" "${python3}/bin/python -m http.server ${frontend}"
