@@ -23,6 +23,7 @@ final: prev: {
   });
   ocp = final.callPackage ./ocp { inherit ocp; };
   ocp-tessellate = final.callPackage ./ocp-tessellate { };
+  ocp-gordon = final.callPackage ./ocp-gordon { };
   ocpsvg = final.callPackage ./ocpsvg { };
   py-lib3mf = final.callPackage ./py-lib3mf { };
   qtconsole = final.callPackage ./qtconsole { };
