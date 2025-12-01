@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "py-lib3mf"
+name = "lib3mf"
 version = "VERSION"
 description = "A python package for Lib3MF tools"
 readme = "README.md"
