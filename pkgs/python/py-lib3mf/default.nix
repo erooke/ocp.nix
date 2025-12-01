@@ -21,11 +21,11 @@ buildPythonPackage {
   disabled = pythonOlder "3.9";
 
   patchPhase = ''
-    substituteInPlace pyproject.toml py_lib3mf/__init__.py \
+    substituteInPlace pyproject.toml lib3mf/__init__.py \
       --replace "VERSION" "${version}"
 
-    cp ${lib.getDev lib3mf}/include/lib3mf/Bindings/Python/Lib3MF.py py_lib3mf/
-    cp ${lib3mf}/lib/lib3mf.so.${version}.0 py_lib3mf/lib3mf.so
+    cp ${lib.getDev lib3mf}/include/lib3mf/Bindings/Python/Lib3MF.py lib3mf/
+    cp ${lib3mf}/lib/lib3mf.so.${version}.0 lib3mf/lib3mf.so
   '';
 
 }
